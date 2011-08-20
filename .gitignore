@@ -10,4 +10,3 @@ tmp/
 *.log
 *.pid
 *.tmproj
-public/assets/*
