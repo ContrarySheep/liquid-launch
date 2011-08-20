@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
+"http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	
+	<!-- The name of the Launch Agent file -->
+	<key>Label</key>
+	<string><%= @plist.filename_as_title -%></string>
+	
+	<!-- The location of the executable, plus any parameters -->
+	<key>ProgramArguments</key>
+	<array>
+		<string><%= @plist.executable -%></string>
+		<%= render 'plist_arguments' -%>
+	</array>
+	
+	<!-- When the executable should be run -->
+	<key>StartCalendarInterval</key>
+	<dict>
+		<% if !@plist.month.empty? %>
+		<key>Month</key>
+		<integer><%= @plist.month %></integer>
+		<% end %>
+		<% if !@plist.weekday.empty? %>
+		<key>Weekday</key>
+		<integer><%= @plist.weekday %></integer>
+		<% end %>
+		<% if !@plist.day.empty? %>
+		<key>Day</key>
+		<integer><%= @plist.day %></integer>
+		<% end %>
+		<% if !@plist.hour.empty? %>
+		<key>Hour</key>
+		<integer><%= @plist.hour %></integer>
+		<% end %>
+		<% if !@plist.minute.empty? %>
+		<key>Minute</key>
+		<integer><%= @plist.minute %></integer>
+		<% end %>
+	</dict>
+	
+</dict>
+</plist>

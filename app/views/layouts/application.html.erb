@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Liquid-Launch</title>
+  <%= stylesheet_link_tag    "application" %>
+<%= stylesheet_link_tag("/development_override") if Rails.env.development? %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+	<script>
+	  $(document).ready(function () {
+			initVisibleArguments();
+		});
+	</script>
+</head>
+<body>
+	<div id="header">
+		<div class="logo"><%= image_tag "martini.png" %></div>
+		<h1>Liquid-Launch</h1>
+	</div>
+	<%= yield %>
+	<div id="footer">
+		Make sure you know what you are doing when working with the LaunchAgent files! This site, its creators and contributors are not responsible for how you use this information, and any subsequent damage it may cause.
+	</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<div id="download_button">
+	<%= link_to "Download File", "/#{@plist.filename_as_plist}" %>
+</div>
+
+<div id="instructions">
+	<div class="load">
+		launchctl load ~/Library/LaunchAgents/<%= @plist.filename_as_plist -%>
+	</div>
+	<div class="unload">
+		launchctl unload ~/Library/LaunchAgents/<%= @plist.filename_as_plist -%>
+	</div>
+</div>
+
+<div id="plist_code">
+	<%= render_xml_as_html render("plist") %>
+</div>
+

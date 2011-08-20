@@ -1,0 +1,11 @@
+<% arguments = [ @plist.argument_1, @plist.argument_2, @plist.argument_3, @plist.argument_4, @plist.argument_5 ]%>
+<% indent = false %>
+<% for argument in arguments do %>
+	<% if !argument.empty? && indent == false %>
+<string><%= argument -%></string>
+	<% end %>
+	<% if !argument.empty? && indent == true %>
+		<string><%= argument -%></string>
+	<% end %>
+	<% indent = true %>
+<% end %>

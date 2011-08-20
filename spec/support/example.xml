@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+	<name>Sample</name>
+	<subcontent>
+		<name>Sub-Sample-1</name>
+		<name>Sub-Sample-2</name>
+	</subcontent>
+</content>
