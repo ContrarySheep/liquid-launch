@@ -1,0 +1,76 @@
+body{
+	margin: 0;
+	color: gray;
+	background-color: white;
+	font: 17px "Helvetica Neue", Helvetica, Arial, FreeSans, san-serif;
+	vertical-align: top;
+}
+h1,h2,h3,h4,h5{
+	color: #424242;
+}
+li{
+	list-style-image: url(li_olive.png);
+	vertical-align: top;
+}
+a {
+	color: #424242;
+	vertical-align: top; 
+}
+#not_found{
+	margin-top:40px;
+}
+#container {
+  margin: 0 auto;
+  width: 700px;
+}
+#header{
+	margin-top: 1em;
+	text-align: center;
+}
+#header h1{
+	font-weight: bold;
+	font-size: 2.5em;
+	margin: 0;
+}
+#header .tagline{
+	color: #797979;
+	text-align: center;
+	font-style: italic;
+	font-weight: bold;
+	font-size: .8em;
+	margin-top: .5em;
+	margin-bottom: 2em;
+}
+#footer{
+	margin: 2em auto 3em;
+}
+#footer .disclaimer{
+	font-size: 0.9em;
+	background-color: #a00;
+	color: #fffeff;
+	border: 1px solid #5e5e5e;
+	text-shadow: #5e5e5e 1px 1px 1px;
+	padding: 0.5em 1.5em 1em;
+}
+#launch_button{
+	text-align: center;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+#launch_button a{
+	border:1px solid #797979;
+	background-color: #a00;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#a00), to(#700000));
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	color:#fffeff;
+	text-shadow: #424242 2px 2px 2px;
+	font:bold 1em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	text-decoration:none;
+	padding: 6px 15px 8px;
+}
+.download_icons{
+	text-align: center;
+}
+pre { background: #000; color: #fff; padding: 15px;}

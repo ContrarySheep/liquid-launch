@@ -2,76 +2,84 @@
 <html>
 <head>
   <meta charset='utf-8'>
-
-  <title>ContrarySheep/liquid-launch @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #999;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #666666; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #666666; }
-    h3 { text-align: center; color: #666666; }
-    a { color: #666666; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+  <title>Liquid-Launch</title>
+  <link href="main.css" media="all" rel="stylesheet" type="text/css" />
 </head>
-
 <body>
-  <a href="http://github.com/ContrarySheep/liquid-launch"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-
-    <div class="download">
-      <a href="http://github.com/ContrarySheep/liquid-launch/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/ContrarySheep/liquid-launch/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="http://github.com/ContrarySheep/liquid-launch">liquid-launch</a>
-      <span class="small">by <a href="http://github.com/ContrarySheep">ContrarySheep</a></span></h1>
-
-    <div class="description">
-      A web app that helps you create LaunchAgent files for OS X
-    </div>
-
-    <h2>Authors</h2>
-<p>ContrarySheep (contrarysheep@gmail.com)<br/><br/>      </p>
-<h2>Contact</h2>
-<p> (contrarysheep@gmail.com)<br/>      </p>
-
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/ContrarySheep/liquid-launch/zipball/master">zip</a> or
-      <a href="http://github.com/ContrarySheep/liquid-launch/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/ContrarySheep/liquid-launch</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/ContrarySheep/liquid-launch">ContrarySheep/liquid-launch</a>
-    </div>
-
+  <div id="github_ribbon">
+    <a href="http://github.com/ContrarySheep/liquid-launch"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a>
   </div>
-
-  
+  <div id="container">
+    <div id="header">
+      <div class="logo"><img alt="Martini" src="martini.png" /></div> 
+      <h1>Liquid-Launch</h1>
+      <div class="tagline">Because launchd is a leading cause of alcoholism.</div>
+    </div>
+    <div id="main">
+      <p>Liquid-Launch aims to make scheduling scripts with Apple OS X's implementation of <a href="http://en.wikipedia.org/wiki/Launchd" target="_blank">launchd</a> a little easier. Instead of spending hours agonizing over the writing of an ugly XML file just to get your script to launch every <em>$n</em> day, use Liquid-Launch to write the file for you. That way, you can knock off early and go get that drink you so richly deserve.</p>
+      <p>Through its web interface, Liquid-Launch runs a teeny bit of Ruby code to parse out your arguments and create the plist file that you can download to your LaunchAgents folder. From there, your machine will automatically perform your script at the desired intervals.</p>
+      <p>While you are free to download the app and run it yourself, a live version app is up at Heroku.</p>
+      <div id="launch_button">
+        <a href="http://freezing-fog-377.herokuapp.com/" target="_blank">Launch Live App</a>
+      </div>
+      <h2>Resources</h2>
+      <p>Apple's embrace of <a href="http://en.wikipedia.org/wiki/Launchd" target="_blank">launchd</a> is a bit of a sticky wicket. It can be pretty confusing. Here are a few resources that may help with understanding what it is all about.</p>
+      <ul>
+        <li>
+          <a href="http://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man8/launchd.8.html" target="_blank">
+            launchd man page
+          </a>
+        </li>
+        <li>
+          <a href="http://en.wikipedia.org/wiki/Launchd" target="_blank">
+            launchd at Wikipedia
+          </a>
+        </li>
+        <li>
+          <a href="http://launchd.macosforge.org/">
+            launchd at Mac OS Forge
+          </a>
+        </li>
+      </ul>
+      <h2>Source Code</h2>
+      <p>This project was originally created with Ruby on Rails 3.1.0 rc6 as an excuse to play with the bleeding edge code. If you would like to take a look at the code on Github, visit <a href="http://github.com/ContrarySheep/liquid-launch">http://github.com/ContrarySheep/liquid-launch</a>
+      </p>
+      <p>You can also just download the source as a zip or tarball.</p>
+      <div class="download_icons">
+        <a href="http://github.com/ContrarySheep/liquid-launch/zipball/master">
+          <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+        <a href="http://github.com/ContrarySheep/liquid-launch/tarball/master">
+          <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+      </div>
+      <p>While downloading "zips" and "tarballs" sounds like fun, it's waaaay more exciting to clone the source using <a href="http://git-scm.com">Git</a>:
+        <pre>$ git clone git://github.com/ContrarySheep/liquid-launch</pre>
+      </p>
+      <h2>Contribute</h2>
+      <p>Contributions to the project are more than welcome. There's always something that can be done. Please consider forking the project on <a href="http://github.com/ContrarySheep/liquid-launch">Github</a>.</p>
+      <h2>Credits</h2>
+      <ul id="credits">
+        <li>
+          This project was originally written by <a href="http://twitter.com/ContrarySheep">@ContrarySheep</a>.
+        </li>
+        <li>
+          A special thank-you to <a href="http://heroku.com/" target="_blank">Heroku</a> for hosting the live app.
+        </li>
+        <li>
+          Another thank-you to <a href="http://github.com/" target="_blank">Github</a> for hosting this page and the source code.
+        </li>
+        <li>
+          Shout-out to Steven Ansell at <a href="http://steveansell.com/" target="_blank">steveansell.com</a> for the unauthorized use of his icons
+        </li>
+      </ul>
+      <h2>License</h2>
+      <p>This project is released under an MIT license, which pretty-much means you can do whatever you want with it. See the source code for more details.</p>
+    </div>
+    <div id="footer">
+      <div class="disclaimer">
+        <p><strong>Make sure you know what you are doing when working with the LaunchAgent files!</strong></p>
+        <p>Liquid-Launch, its creators and contributors are not responsible for how you use this project or code, and any subsequent damage it may cause.</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
