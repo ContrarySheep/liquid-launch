@@ -6,140 +6,219 @@
  *= require_tree . 
 */
 
-html{
-	height: 100%;
+@mixin rounded-corners{
+  -moz-border-radius: 0.5em;
+	border-radius: 0.5em;
 }
 
 body{
-	width: 960px;
-	margin: 0 auto;
-	font: 18px/1.25 "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  width: 700px;
+  margin: 0 auto;
+  color: gray;
+  background-color: white;
+  font: 18px/1.25 "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  vertical-align: top;
 }
 
 h1,h2,h3,h4,h5{
-	margin: 0;
+  margin: 0;
 }
 
 ul{
-	margin: 25px 0;
-	padding: 0;
+  margin: 25px 0;
+  padding: 0;
 }
 
 li{
-	list-style-type: none;
+  list-style-type: none;
 }
+a {
+	color: #424242;
+	vertical-align: top; 
+}
+#not_found{
+	margin-top:40px;
+}
+pre { background: #000; color: #fff; padding: 15px;}
 
 #header{
-	margin-top: 40px;
-	h1{
-		text-align: center;
-	}
-	.logo{
-		text-align: center;
-	}
+  margin-top: 1em;
+    text-align: center;
+  h1{
+    font-weight: bold;
+      font-size: 2.5em;
+      margin: 0;
+  }
+  .logo{
+  }
+  .tagline{
+    color: #797979;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    font-size: .8em;
+    margin-top: .5em;
+    margin-bottom: 2em;
+  }
 }
 
 #footer{
-	margin-top: 40px;
-	padding-bottom: 40px;
-	font-size: .6em;
-	text-align: center;
+  margin: 2em auto 3em;
+  text-align: center;
+  .disclaimer{
+    font-size: 0.9em;
+    background-color: #a00;
+    color: #fffeff;
+    border: 1px solid #5e5e5e;
+    text-shadow: #5e5e5e 1px 1px 1px;
+    padding: 0.5em 1.5em 1em;
+    @include rounded-corners;
+  }
+  .about{
+    margin-top:1.5em;
+    text-align: left;
+    font-size: 1.2em;
+  }
 }
 
 form{
-	input[type="text"]{
-		border: 1px solid #c0c0c0;
-		padding: 3px;
-		width: 952px;
-		font: 1.2em "Courier New", Courier, mono;
-		margin: 0;
-	}
-	input[type="submit"]{
-		border: 1px solid #797979;
-		background-color: #929292;
-		padding: 8px 15px;
-		color: #fffeff;
-		text-shadow: #5e5e5e 2px 2px 2px;
-		font: bold 1em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-	}
-	select{
-		width: 170px;
-	}
-	label{
-		font-weight: bold;
-		font-size: .7em;
-		width: 90px;
-		float: left;
-		text-align: left;
-		margin-top: .3em;
-	}
-	.required{
-		float: left;
-		height: 30px;
-		width: 30px;
-		margin-right: 10px;
-		img{
-			position: absolute;
-			width: 30px;
-		}
-	}
-	.note{
-		font-size: .6em;
-		font-style: italic;
-		margin-top: 10px;
-		margin-bottom: 10px;
-	}
-	#add_argument_button{
-		margin-top: 15px;
-		a{
-			border: 1px solid #797979;
-			background-color: #929292;
-			padding: 5px 10px 6px;
-			color: #fffeff;
-			text-shadow: #5e5e5e 2px 2px 2px;
-			text-decoration: none;
-			font: bold .6em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-		}
-	}
-	.argument{
-		margin-top: 10px;
-		label{
-			width: 140px;
-			margin-top: .7em;
-		}
-		input{
-			width: 812px;
-		}
-	}
+  #error_explanation{
+    font-size: 0.9em;
+    background-color: #a00;
+    color: #fffeff;
+    border: 1px solid #5e5e5e;
+    @include rounded-corners;
+    padding: 0.5em 1.5em 1em;
+    h2{text-shadow: #5e5e5e 1px 1px 1px;}
+    ul{
+      margin:0;
+      margin-top: 0.5em;
+      background-color:inherit;
+      padding:0;
+      li{
+        margin-bottom: 0.5em;
+        padding: 0;
+        	list-style-position: inside;
+        	list-style-type: decimal;
+      }
+    }
+  }
+  ul{
+    background-color: #eaeaea;
+    padding: 25px;
+    @include rounded-corners;
+  }
+  input[type="text"]{
+    border: 1px solid #c0c0c0;
+    padding: 3px;
+    width: 642px;
+    font: 1.2em "Courier New", Courier, mono;
+    margin: 0;
+  }
+  input[type="submit"]{
+    border: 1px solid #797979;
+    background-color: #929292;
+    padding: 8px 15px;
+    text-align:center;
+    color: #fffeff;
+    text-shadow: #5e5e5e 2px 2px 2px;
+    font: bold 1em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    @include rounded-corners;
+  }
+  select{
+    width: 170px;
+  }
+  label{
+    font-weight: bold;
+    font-size: .7em;
+    width: 90px;
+    float: left;
+    text-align: left;
+    margin-top: .3em;
+  }
+  .required{
+    float: left;
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    img{
+      position: absolute;
+      width: 30px;
+    }
+  }
+  .note{
+    font-size: .6em;
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  #add_argument_button{
+    margin-top: 15px;
+    a{
+      border: 1px solid #797979;
+      background-color: #929292;
+      padding: .7em 1.2em .8em 2.8em;
+      color: #fffeff;
+      text-shadow: #5e5e5e 2px 2px 2px;
+      text-decoration: none;
+      font: bold .6em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+      @include rounded-corners;
+    }
+    .plus{
+      	position: absolute;
+              	margin-top: -0.5em;
+              	margin-left: 0.25em;
+              	color: #fffeff;
+                text-shadow: #5e5e5e 2px 2px 2px;
+                text-decoration: none;
+        	font: bold 1.65em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    }
+    .note{
+    	padding-bottom: 1em;
+    }
+  }
+  .argument{
+    height: 3.2em;
+    label{
+      width: 140px;
+      margin-top: .7em;
+    }
+    input{
+      width: 642px;
+    }
+  }
+  .submit{
+  	text-align: center;
+  }
 }
 
 #download_button{
-	text-align: center;
-	margin-top:40px;
-	margin-bottom:40px;
-	a{
-		border: 1px solid #797979;
-		background-color: #929292;
-		padding: 8px 15px;
-		color: #fffeff;
-		text-shadow: #5e5e5e 2px 2px 2px;
-		font: bold 1em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-		text-decoration:none;
-	}
+  text-align: center;
+  margin-top:1.5em;
+  margin-bottom:1.5em;
+  a{
+    border:1px solid #797979;
+    background-color: #a00;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#a00), to(#700000));
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    color:#fffeff;
+    text-shadow: #424242 2px 2px 2px;
+    font:bold 1em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    text-decoration:none;
+    padding: 6px 15px 8px;
+  }
 }
 
 #instructions{
-	margin-bottom: 40px;
-	background-color: #cccccc;
-	padding: 10px;
 }
 
 #plist_code{
-	width:960px;
-	height:300px;
-	overflow:auto;
-	border: 1px #cccccc solid;
-	margin-right:auto;
-	margin-left:auto;
-	font: 0.8em "Courier New", Courier, mono;
+  width:700px;
+  height:300px;
+  overflow:auto;
+  border: 1px #cccccc solid;
+  margin-right:auto;
+  margin-left:auto;
+  font: 0.8em "Courier New", Courier, mono;
 }

@@ -1,94 +1,99 @@
-<%= form_for :plist, :url => results_path do |f| %>
-	<% if @plist.errors.any? %>
-	 <div id="error_explanation">
-	   <h2>Error</h2>
-	   <ul>
-	   <% @plist.errors.full_messages.each do |msg| %>
-	     <li><%= msg %></li>
-	   <% end %>
-	   </ul>
-	 </div>
-	<% end %>
+<p>Liquid-Launch aims to make scheduling scripts with Apple OS X's implementation of <a href="http://en.wikipedia.org/wiki/Launchd" target="_blank">launchd</a> a little easier. Instead of spending hours agonizing over the writing of an ugly XML file just to get your script to launch every <em>$n</em> day, use Liquid-Launch to write the file for you. That way, you can knock off early and go get that drink you so richly deserve.</p>
 
-	<ul>
-		<li>
-			<div class="required"><%= image_tag "required_olive.png" %></div>
-			<h2>Filename</h2>
-			<div class="note">Apple's naming convention is such that the filename is usually something like a reverse domain name (i.e. - <em>com.apple.sample.plist</em>). While this convention is not strictly enforced, your filename must end with the ".plist" suffix.</div>
-		</li>
-		<li>
-			<%= f.text_field :filename %>
-		</li>
-	</ul>
-	
-	<ul>
-		<li>
-			<div class="required"><%= image_tag "required_olive.png" %></div>
-			<h2>Executable</h2>
-			<div class="note">This should be the full path to the application's executable or script you want to launch.</div>
-		</li>
-		<li>			
-			<%= f.text_field :executable %>
-		</li>
-		<li class="argument" id="argument_1" <%= raw argument_display(1) -%>>
-			<%= f.label "First Argument:" %>
-			<%= f.text_field :argument_1 %>
-		</li>
-		<li class="argument" id="argument_2" <%= raw argument_display(2) -%>>
-			<%= f.label "Second Argument:" %>
-			<%= f.text_field :argument_2 %>
-		</li>
-		<li class="argument" id="argument_3" <%= raw argument_display(3) -%>>
-			<%= f.label "Third Argument:" %>
-			<%= f.text_field :argument_3 %>
-		</li>
-		<li class="argument" id="argument_4" <%= raw argument_display(4) -%>>
-			<%= f.label "Fourth Argument:" %>
-			<%= f.text_field :argument_4 %>
-		</li>
-		<li class="argument" id="argument_5" <%= raw argument_display(5) -%>>
-			<%= f.label "Fifth Argument:" %>
-			<%= f.text_field :argument_5 %>
-		</li>
-		<li id="add_argument_button">
-			<%= link_to_function "Add Optional Argument", "add_argument()" %>
-		</li>
-	</ul>
-	
-	<ul>
-		<li>
-			<div class="required"><%= image_tag "required_olive.png" %></div>
-			<h2>Schedule</h2>
-			<div class="note">The executable will launch according to the schedule that you determine. Choose only the intervals you need.</div>
-		</li>
-		<li>
-			<% selected_month = @plist && @plist.month && !@plist.month.empty? ? @plist.month.to_i : 14 %>
-			<%= f.label "Month:" %>
-			<%= select_month selected_month, :prefix => 'plist', :field_name => 'month', :prompt => 'Choose Month' %>
-		</li>
-		<li>
-			<% selected_weekday = @plist && @plist.weekday && !@plist.weekday.empty? ? @plist.weekday : '' %>
-			<%= f.label "Day of Week:" %>
-			<% select_options = "<option value=>Choose Day of Week</option>#{options_for_select [['Sunday', '0'],['Monday', '1'],['Tuesday', '2'],['Wednesday', '3'],['Thursday', '4'],['Friday', '5'],['Saturday', '6']], selected_weekday}" %>
-			<%= f.select :weekday, select_options %>
-		</li>
-		<li>
-			<% selected_day = @plist && @plist.day && !@plist.day.empty? ? @plist.day.to_i : 34 %>
-			<%= f.label "Specific Day:" %>
-			<%= select_day selected_day, :prefix => 'plist', :field_name => 'day', :prompt => 'Choose Day of Month' %>
-		</li>
-		<li>
-			<% selected_hour = @plist && @plist.hour && !@plist.hour.empty? ? @plist.hour.to_i : 26 %>
-			<%= f.label "Hour:" %>
-			<%= select_hour selected_hour, :prefix => 'plist', :field_name => 'hour', :prompt => 'Choose Hour' %>
-		</li>
-		<li>
-			<% selected_minute = @plist && @plist.minute && !@plist.minute.empty? ? @plist.minute.to_i : 62 %>
-			<%= f.label "Minute:" %>
-			<%= select_minute selected_minute, :prefix => 'plist', :field_name => 'minute', :prompt => 'Choose Minute' %>
-		</li>
-	</ul>
-	
-	<%= f.submit "Generate Launcher" %>
-	
+<%= form_for :plist, :url => results_path do |f| %>
+  <% if @plist.errors.any? %>
+   <div id="error_explanation" anchor="errors">
+     <h2>Error</h2>
+     <ul>
+     <% @plist.errors.full_messages.each do |msg| %>
+       <li><%= msg %></li>
+     <% end %>
+     </ul>
+   </div>
+  <% end %>
+
+  <ul>
+    <li>
+      <div class="required"><%= image_tag "required_olive.png" %></div>
+      <h2>Filename</h2>
+      <div class="note">Apple's naming convention is such that the filename is usually something like a reverse domain name (i.e. - <em>com.apple.sample.plist</em>). While this convention is not strictly enforced, your filename must end with the ".plist" suffix.</div>
+    </li>
+    <li>
+      <%= f.text_field :filename %>
+    </li>
+  </ul>
+  
+  <ul>
+    <li>
+      <div class="required"><%= image_tag "required_olive.png" %></div>
+      <h2>Executable</h2>
+      <div class="note">This should be the full path to the application's executable or script you want to launch.</div>
+    </li>
+    <li>      
+      <%= f.text_field :executable %>
+    </li>
+    <li class="argument" id="argument_1" <%= raw argument_display(1) -%>>
+      <%= f.label "First Argument:" %>
+      <%= f.text_field :argument_1 %>
+    </li>
+    <li class="argument" id="argument_2" <%= raw argument_display(2) -%>>
+      <%= f.label "Second Argument:" %>
+      <%= f.text_field :argument_2 %>
+    </li>
+    <li class="argument" id="argument_3" <%= raw argument_display(3) -%>>
+      <%= f.label "Third Argument:" %>
+      <%= f.text_field :argument_3 %>
+    </li>
+    <li class="argument" id="argument_4" <%= raw argument_display(4) -%>>
+      <%= f.label "Fourth Argument:" %>
+      <%= f.text_field :argument_4 %>
+    </li>
+    <li class="argument" id="argument_5" <%= raw argument_display(5) -%>>
+      <%= f.label "Fifth Argument:" %>
+      <%= f.text_field :argument_5 %>
+    </li>
+    <li id="add_argument_button">
+      <div class="note">Arguments are anything following the initial executable.</div>
+      <div class="plus">+</div>
+      <%= link_to_function 'Add Optional Argument', "add_argument()" %>
+    </li>
+  </ul>
+  
+  <ul>
+    <li>
+      <div class="required"><%= image_tag "required_olive.png" %></div>
+      <h2>Schedule</h2>
+      <div class="note">The executable will launch according to the schedule that you determine. Choose only the intervals you need.</div>
+    </li>
+    <li>
+      <% selected_month = @plist && @plist.month && !@plist.month.empty? ? @plist.month.to_i : 14 %>
+      <%= f.label "Month:" %>
+      <%= select_month selected_month, :prefix => 'plist', :field_name => 'month', :prompt => 'Choose Month' %>
+    </li>
+    <li>
+      <% selected_weekday = @plist && @plist.weekday && !@plist.weekday.empty? ? @plist.weekday : '' %>
+      <%= f.label "Day of Week:" %>
+      <% select_options = "<option value=>Choose Day of Week</option>#{options_for_select [['Sunday', '0'],['Monday', '1'],['Tuesday', '2'],['Wednesday', '3'],['Thursday', '4'],['Friday', '5'],['Saturday', '6']], selected_weekday}" %>
+      <%= f.select :weekday, select_options %>
+    </li>
+    <li>
+      <% selected_day = @plist && @plist.day && !@plist.day.empty? ? @plist.day.to_i : 34 %>
+      <%= f.label "Specific Day:" %>
+      <%= select_day selected_day, :prefix => 'plist', :field_name => 'day', :prompt => 'Choose Day of Month' %>
+    </li>
+    <li>
+      <% selected_hour = @plist && @plist.hour && !@plist.hour.empty? ? @plist.hour.to_i : 26 %>
+      <%= f.label "Hour:" %>
+      <%= select_hour selected_hour, :prefix => 'plist', :field_name => 'hour', :prompt => 'Choose Hour' %>
+    </li>
+    <li>
+      <% selected_minute = @plist && @plist.minute && !@plist.minute.empty? ? @plist.minute.to_i : 62 %>
+      <%= f.label "Minute:" %>
+      <%= select_minute selected_minute, :prefix => 'plist', :field_name => 'minute', :prompt => 'Choose Minute' %>
+    </li>
+  </ul>
+  
+  <div class="submit">
+    <%= f.submit "Generate Launcher" %>
+  </div>
 <% end %>

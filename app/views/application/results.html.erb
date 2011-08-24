@@ -1,17 +1,22 @@
+<p class="brief">
+  Right-click on the "Download File" button and save the file to you "LaunchAgents" directory.
+</p>
+
 <div id="download_button">
-	<%= link_to "Download File", "/#{@plist.filename_as_plist}" %>
+  <%= link_to "Download File", "/#{@plist.filename_as_plist}" %>
 </div>
 
 <div id="instructions">
-	<div class="load">
-		launchctl load ~/Library/LaunchAgents/<%= @plist.filename_as_plist -%>
-	</div>
-	<div class="unload">
-		launchctl unload ~/Library/LaunchAgents/<%= @plist.filename_as_plist -%>
-	</div>
+  <p>While you can restart your user session to activate the new schedule, you can also manually load it into launchctl with the following command.</p>
+  <pre>% launchctl load ~/Library/LaunchAgents/<%= @plist.filename_as_plist -%></pre>
+  <p>To unload the schedule, use the following command. You may also want to remove the schedule from your "LaunchAgents" directory to make sure it wont get loaded on login.
+  <pre>% launchctl unload ~/Library/LaunchAgents/<%= @plist.filename_as_plist -%></pre>
 </div>
 
+<p>
+  Below is a preview of the code generated for your plist file.
+</p>
 <div id="plist_code">
-	<%= render_xml_as_html render("plist") %>
+  <%= render_xml_as_html render("plist") %>
 </div>
 

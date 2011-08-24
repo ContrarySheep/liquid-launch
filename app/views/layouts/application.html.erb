@@ -6,20 +6,33 @@
 <%= stylesheet_link_tag("/development_override") if Rails.env.development? %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-	<script>
-	  $(document).ready(function () {
-			initVisibleArguments();
-		});
-	</script>
+  <script>
+    $(document).ready(function () {
+      initVisibleArguments();
+    });
+  </script>
 </head>
 <body>
-	<div id="header">
-		<div class="logo"><%= image_tag "martini.png" %></div>
-		<h1>Liquid-Launch</h1>
-	</div>
-	<%= yield %>
-	<div id="footer">
-		Make sure you know what you are doing when working with the LaunchAgent files! This site, its creators and contributors are not responsible for how you use this information, and any subsequent damage it may cause.
-	</div>
+  <div id="github_ribbon"> 
+    <a href="http://github.com/ContrarySheep/liquid-launch"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a> 
+  </div>
+  <div id="container">
+    <div id="header">
+      <div class="logo"><%= image_tag "martini.png" %></div>
+      <h1>Liquid-Launch</h1>
+      <div class="tagline">Because launchd is one of the leading causes of alcoholism.</div> 
+    </div>
+    <%= yield %>
+    <div id="footer"> 
+        <div class="disclaimer"> 
+          <p><strong>Make sure you know what you are doing when working with the LaunchAgent files!</strong></p> 
+          <p>Liquid-Launch, its creators and contributors are not responsible for how you use this project or code, and any subsequent damage it may cause.</p> 
+        </div> 
+        <div class="about">
+          Liquid-Launch is an open source project. More information about the code, license, and support can be found one the Github project page at <a href="http://github.com/ContrarySheep/liquid-launch">http://github.com/ContrarySheep/liquid-launch</a>.
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
