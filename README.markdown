@@ -1,5 +1,5 @@
 # Liquid-Launch
-### Because launchd is a leading cause of alcoholism.
+### Because launchd is one of the leading causes of alcoholism.
 
 Liquid-Launch aims to make scheduling scripts with Apple OS X's implementation of launchd a little easier. Instead of spending hours agonizing over the writing of an ugly XML file just to get your script to launch every $n day, use Liquid-Launch to write the file for you. That way, you can knock off early and go get that drink you so richly deserve.
 
